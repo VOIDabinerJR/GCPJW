@@ -5,9 +5,14 @@
         <group>
             <file>file:/C:/Users/DELL/Desktop/GCPJW/src/java/Servlet/ClienteServlet.java</file>
             <file>file:/C:/Users/DELL/Desktop/GCPJW/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/DELL/Desktop/GCPJW/build/web/index.jsp</file>
+            <file>file:/C:/Users/DELL/Desktop/GCPJW/web/produto/listar.jsp</file>
+            <file>file:/C:/Users/DELL/Desktop/GCPJW/web/produto/editar.jsp</file>
             <file>file:/C:/Users/DELL/Desktop/GCPJW/web/index.jsp</file>
+            <file>file:/C:/Users/DELL/Desktop/GCPJW/web/cliente/editar.jsp</file>
+            <file>file:/C:/Users/DELL/Desktop/GCPJW/web/cliente/listar.jsp</file>
+            <file>file:/C:/Users/DELL/Desktop/GCPJW/web/associar.jsp</file>
             <file>file:/C:/Users/DELL/Desktop/GCPJW/src/java/Servlet/ClienteProdutoServlet.java</file>
+            <file>file:/C:/Users/DELL/Desktop/GCPJW/web/cliente/novo.jsp</file>
         </group>
     </open-files>
 </project-private>
