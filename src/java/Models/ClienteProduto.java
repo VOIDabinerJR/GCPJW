@@ -13,6 +13,8 @@ package Models;
 public class ClienteProduto {
     private int clienteId;
     private int produtoId;
+    private String clienteNome;
+    private String produtoNome;
 
     public ClienteProduto() {
     }
@@ -21,6 +23,15 @@ public class ClienteProduto {
         this.clienteId = clienteId;
         this.produtoId = produtoId;
     }
+
+    public ClienteProduto(int clienteId, int produtoId, String clienteNome, String produtoNome) {
+        this.clienteId = clienteId;
+        this.produtoId = produtoId;
+        this.clienteNome = clienteNome;
+        this.produtoNome = produtoNome;
+    }
+    
+    
 
     public int getClienteId() {
         return clienteId;
@@ -37,6 +48,24 @@ public class ClienteProduto {
     public void setProdutoId(int produtoId) {
         this.produtoId = produtoId;
     }
+
+    public String getClienteNome() {
+        return clienteNome;
+    }
+
+    public void setClienteNome(String clienteNome) {
+        this.clienteNome = clienteNome;
+    }
+
+    public String getProdutoNome() {
+        return produtoNome;
+    }
+
+    public void setProdutoNome(String produtoNome) {
+        this.produtoNome = produtoNome;
+    }
+    
+    
     
     @Override
 public String toString() {
@@ -45,6 +74,8 @@ public String toString() {
             ", produtoId=" + produtoId +
             '}';
 }
+
+  
 
 }
 

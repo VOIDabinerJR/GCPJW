@@ -6,9 +6,11 @@ package DAO;
 
 
 
+import Models.ClienteProduto;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ConnectionFactory {
 
@@ -26,7 +28,9 @@ public class ConnectionFactory {
     }
     public static void main(String[] args) throws SQLException {
         Connection connection = getConnection();
-        System.out.println(connection.toString());
+        System.out.println(connection.toString());ClienteProdutoDAO clienteProdutoDAO = new ClienteProdutoDAO();
+             List<ClienteProduto> clientesProdutos = clienteProdutoDAO.listar();
+             System.out.println(clientesProdutos);
         
     }
 }

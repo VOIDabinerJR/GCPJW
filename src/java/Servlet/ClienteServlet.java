@@ -4,14 +4,15 @@
  */
 package Servlet;
 
-
 import DAO.ClienteDAO;
 import Models.Cliente;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.annotation.WebServlet;
 
+@WebServlet("/ClienteServlet")
 public class ClienteServlet extends HttpServlet {
 
     private ClienteDAO clienteDAO = new ClienteDAO();
@@ -19,7 +20,9 @@ public class ClienteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
-        if (action == null) action = "listar";
+        if (action == null) {
+            action = "listar";
+        }
 
         switch (action) {
             case "novo":
@@ -51,7 +54,7 @@ public class ClienteServlet extends HttpServlet {
         cliente.setTelefone(req.getParameter("telefone"));
 
         String id = req.getParameter("id");
-
+        System.out.println(cliente);
         if (id == null || id.isEmpty()) {
             clienteDAO.salvar(cliente);
         } else {

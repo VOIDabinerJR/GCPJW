@@ -92,7 +92,7 @@
 <body>
 <div class="container">
     <h2>➕ Novo Cliente</h2>
-    <form action="../clientes" method="post">
+    <form action="ClienteServlet" method="post">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" required />
 
@@ -104,7 +104,7 @@
 
         <div class="buttons">
             <input type="submit" value="Salvar" />
-            <a href="../clientes">Voltar</a>
+            <a href="ClienteServlet">Voltar</a>
         </div>
     </form>
 </div>

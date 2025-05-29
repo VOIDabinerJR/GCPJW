@@ -75,14 +75,14 @@
 <body>
     <div class="form-container">
         <h2>Editar Cliente</h2>
-        <form action="../clientes" method="post">
+        <form action="ClienteServlet" method="post">
             <input type="hidden" name="id" value="${cliente.id}" />
             <input type="text" name="nome" value="${cliente.nome}" placeholder="Nome completo" required />
             <input type="email" name="email" value="${cliente.email}" placeholder="Email" required />
             <input type="text" name="telefone" value="${cliente.telefone}" placeholder="Telefone" required />
             <input type="submit" value="Atualizar" />
         </form>
-        <a href="../clientes">← Voltar</a>
+        <a href="ClienteServlet">← Voltar</a>
     </div>
 </body>
 </html>

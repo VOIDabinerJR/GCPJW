@@ -82,11 +82,11 @@
 <body>
 <div class="container">
     <h2>➕ Novo Produto</h2>
-    <form action="../produtos" method="post">
+    <form action="ProdutoServlet" method="post">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required />
         
-        <label for="descricao">Descrição:</label>
+        <label for="descricao">Stock</label>
         <input type="text" id="descricao" name="descricao" required />
         
         <label for="preco">Preço:</label>
@@ -94,7 +94,7 @@
         
         <input type="submit" value="Salvar" />
     </form>
-    <a class="back-link" href="../produtos">⬅️ Voltar</a>
+    <a class="back-link" href="ProdutoServlet">⬅️ Voltar</a>
 </div>
 </body>
 </html>

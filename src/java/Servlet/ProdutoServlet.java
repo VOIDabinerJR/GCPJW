@@ -8,8 +8,6 @@ package Servlet;
  *
  * @author DELL
  */
-
-
 import DAO.ProdutoDAO;
 import Models.Produto;
 
@@ -17,7 +15,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.annotation.WebServlet;
 
+@WebServlet("/ProdutoServlet")
 public class ProdutoServlet extends HttpServlet {
 
     private ProdutoDAO produtoDAO = new ProdutoDAO();
@@ -25,7 +25,9 @@ public class ProdutoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
-        if (action == null) action = "listar";
+        if (action == null) {
+            action = "listar";
+        }
 
         switch (action) {
             case "novo":

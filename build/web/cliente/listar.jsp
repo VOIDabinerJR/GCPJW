@@ -106,14 +106,44 @@
             td:nth-of-type(4)::before { content: "Telefone"; }
             td:nth-of-type(5)::before { content: "Ações"; }
         }
+        
+        
+        
+    .tema-claro {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .tema-escuro {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    .tema-escuro .card, .tema-escuro table {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+
+    #botao-tema {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 8px;
+        background-color: #3498db;
+        color: white;
+        cursor: pointer;
+    }
     </style>
 </head>
 <body>
+<button onclick="alternarTema()" id="botao-tema">🌞 Modo Claro</button>
 
 <h2>Lista de Clientes</h2>
 <div class="actions-top">
-    <a href="cliente/novo.jsp">➕ Novo Cliente</a>
-    <a href="index.jsp">🏠 Início</a>
+    <a href="ClienteServlet?action=novo">➕ Novo Cliente</a>
+    <a href="/GCPJW">🏠 Início</a>
 </div>
 
 <table>
@@ -134,14 +164,52 @@
                 <td>${cliente.email}</td>
                 <td>${cliente.telefone}</td>
                 <td>
-                    <a href="ClienteServlet?acao=editar&id=${cliente.id}">✏️ Editar</a>
-                    <a href="ClienteServlet?acao=excluir&id=${cliente.id}" onclick="return confirm('Tem certeza que deseja excluir?')">🗑️ Excluir</a>
-                    <a href="associar?clienteId=${cliente.id}">🔗 Associar</a>
+                    <a href="ClienteServlet?action=editar&id=${cliente.id}">✏️ Editar</a>
+                    <a href="ClienteServlet?action=excluir&id=${cliente.id}" onclick="return confirm('Tem certeza que deseja excluir?')">🗑️ Excluir</a>
+                    <a href="associar?clienteId=${cliente.id}&clienteName=${cliente.nome}">🔗 Associar</a>
                 </td>
             </tr>
         </c:forEach>
     </tbody>
 </table>
+
+
+
+
+
+
+
+<script>
+    function alternarTema() {
+        const body = document.body;
+        const botao = document.getElementById("botao-tema");
+
+        if (body.classList.contains("tema-escuro")) {
+            body.classList.remove("tema-escuro");
+            body.classList.add("tema-claro");
+            botao.textContent = "🌞 Modo Claro";
+        } else {
+            body.classList.remove("tema-claro");
+            body.classList.add("tema-escuro");
+            botao.textContent = "🌙 Modo Escuro";
+        }
+
+        // Salvar preferências no localStorage (opcional)
+        localStorage.setItem("tema", body.classList.contains("tema-escuro") ? "escuro" : "claro");
+    }
+
+    // Ao carregar, aplicar o tema salvo
+    window.onload = function () {
+        const temaSalvo = localStorage.getItem("tema");
+        if (temaSalvo === "escuro") {
+            document.body.classList.add("tema-escuro");
+            document.getElementById("botao-tema").textContent = "🌙 Modo Escuro";
+        } else {
+            document.body.classList.add("tema-claro");
+            document.getElementById("botao-tema").textContent = "🌞 Modo Claro";
+        }
+    };
+</script>
 
 </body>
 </html>

@@ -84,13 +84,13 @@
 <body>
 <div class="container">
     <h2>✏️ Editar Produto</h2>
-    <form action="../produtos" method="post">
+    <form action="ProdutoServlet" method="post">
         <input type="hidden" name="id" value="${produto.id}" />
         
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" value="${produto.nome}" required />
         
-        <label for="descricao">Descrição:</label>
+        <label for="descricao">Stock</label>
         <input type="text" id="descricao" name="descricao" value="${produto.descricao}" required />
         
         <label for="preco">Preço:</label>
@@ -98,7 +98,7 @@
         
         <input type="submit" value="Atualizar" />
     </form>
-    <a class="back-link" href="../produtos">⬅️ Voltar</a>
+    <a class="back-link" href="ProdutoServlet">⬅️ Voltar</a>
 </div>
 </body>
 </html>
